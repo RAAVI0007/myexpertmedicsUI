@@ -1,0 +1,95 @@
+<div class="container text-change">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="h2 page-title">{{pname}}</h1>
+    </div>
+  </div>
+
+  <div class="row alert  border border-secondary">
+    <div class="col-md-4 btw-line">
+      <span class="text-info font-weight-bold ">DOB : </span> {{ dob }}
+    </div>
+    <div class="col-md-4 btw-line">
+      <span class="text-info font-weight-bold ">City : </span> {{ city }}
+    </div>
+    <div class="col-md-4">
+      <span class="text-info font-weight-bold "> Country : </span> {{ country }}
+    </div>
+  </div>
+
+  <div class="row border border-secondary alert">
+    <div class="col-md-6 btw-line">
+      <span class="text-info font-weight-bold ">Diagnosis/ Reason for Consultation: </span>
+      <ol type="1">
+        <li *ngFor="let item of items">
+          {{item}}
+        </li>
+      </ol>
+      <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea">
+          <span class="text-info font-weight-bold ">Diagnosis( if any) </span>
+        </label>
+
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea" rows="3" readonly>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+          specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          It has survived not only five centuries, but also the leap into electronic typesetting.
+        </textarea>
+      </div>
+      <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea">
+          <span class="text-info font-weight-bold ">Any Specific questions</span>
+        </label>
+
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea" rows="3" readonly>
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It
+          was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+          with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </textarea>
+      </div>
+      <span class="text-info font-weight-bold ">Attachements </span>
+
+
+      <ol type="1">
+        <li *ngFor="let attach of attachments">
+          <a href="#"> {{attach}} </a>
+        </li>
+      </ol>
+
+
+
+    </div>
+    <div class="col-md-6">
+
+      <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea">
+          <span class="text-info font-weight-bold ">Second Opinion Recommendations</span>
+        </label>
+
+        <textarea warp="soft" class="form-control z-depth-1" id="exampleFormControlTextarea" rows="10" readonly>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+          specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </textarea>
+        <br>
+        <br>
+        <br>
+        <br>
+      
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <a href="skype:ravi.devireddy07?call"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0%0D%0Ab3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZl%0D%0AcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8x%0D%0AIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8v%0D%0Ad3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQw%0D%0AMC45MzIgNDAwLjkzMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAwLjkzMiA0%0D%0AMDAuOTMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cGF0aCBzdHlsZT0iZmlsbDojMDBBQUYy%0D%0AOyIgZD0iTTM4NC43NjIsMjMxLjAzOWMtNi4zNjEtOC43OTItOS4zMDktMTkuNTMtOS4yOTctMzAu%0D%0AMzgyYzAuMDAxLTAuMDYzLDAuMDAxLTAuMTI2LDAuMDAxLTAuMTkNCgljMC05Ni42NDktNzguMzUt%0D%0AMTc0Ljk5OS0xNzQuOTk5LTE3NC45OTljLTIxLjE0MywwLTQxLjQwMiwzLjc2My02MC4xNjIsMTAu%0D%0ANjRjLTEwLjE0OSwzLjcyLTIxLjI2Nyw0LjQzNS0zMS42NzIsMS41MDQNCgljLTkuMTkxLTIuNTg5%0D%0ALTE5LjAwOS0zLjY4MS0yOS4xOC0yLjk4MWMtNDIuNzI1LDIuOTQtNzcuMTIxLDM3Ljk1NS03OS4z%0D%0AMzUsODAuNzI0Yy0xLjA1NywyMC40MTQsNS4wNjUsMzkuMzUxLDE2LjA1Myw1NC41MzkNCgljNi4z%0D%0ANjEsOC43OTIsOS4zMDksMTkuNTMsOS4yOTYsMzAuMzgyYzAsMC4wNjMsMCwwLjEyNiwwLDAuMTlj%0D%0AMCw5Ni42NDksNzguMzQ5LDE3NC45OTksMTc0Ljk5OSwxNzQuOTk5DQoJYzIxLjE0NCwwLDQxLjQw%0D%0AMy0zLjc2Myw2MC4xNjItMTAuNjRjMTAuMTQ5LTMuNzIsMjEuMjY3LTQuNDM1LDMxLjY3Mi0xLjUw%0D%0ANGM5LjE5MSwyLjU4OSwxOS4wMDgsMy42ODEsMjkuMTgsMi45ODENCgljNDIuNzI1LTIuOTQsNzcu%0D%0AMTItMzcuOTU0LDc5LjMzNS04MC43MjJDNDAxLjg3MiwyNjUuMTY2LDM5NS43NSwyNDYuMjI4LDM4%0D%0ANC43NjIsMjMxLjAzOXogTTIwNi44NzMsMTY5LjA5Mw0KCWMzNS4yODYsOC4zOTEsODguNjA4LDIx%0D%0ALjA3MSw4OC42MDgsNzkuODA2YzAsMjguOTM0LTE0LjI0OSw1MS4wMDYtNDAuMTI0LDYyLjE0OWMt%0D%0AMTguNDY0LDcuOTUyLTM5LjM2MSw5LjAyNS01Ny4zNjgsOS4wMjUNCgljLTU1LjMzNiwwLTkwLjI4%0D%0ANi00My4wMjgtOTEuNzQ3LTQ0Ljg2Yy05LjA2Mi0xMS4zNjYtNy4xOTctMjcuOTI4LDQuMTctMzYu%0D%0AOTljMTEuMzY0LTkuMDY2LDI3LjkyNi03LjE5NiwzNi45OSw0LjE2Nw0KCWMwLjA4MSwwLjA5Nywy%0D%0AMC45ODIsMjQuMTAxLDUwLjU4NywyNS4wNGMzNS42NSwxLjEzMSw0My43OTUtOS40NzYsNDQuODQ4%0D%0ALTE4LjUzYzEuMjg3LTExLjA1OC04LjU1LTE5LjE3Ni00OC4xNDYtMjguNTkyDQoJYy0zMy41NjIt%0D%0ANy45ODItODQuMjg3LTIwLjA0NC04NC4yODctNzQuMTM3YzAtMTYuODQ1LDYuODUxLTcxLjgwNyw5%0D%0ANS4wMTMtNzEuODA3YzU1LjY2OCwwLDg4LjUyNyw0My44MjksODkuODk5LDQ1LjY5NQ0KCWM4LjYx%0D%0ALDExLjcxMyw2LjA5NiwyOC4xODktNS42MTcsMzYuNzk4Yy0xMS42NjIsOC41NzItMjguMDM0LDYu%0D%0AMTE5LTM2LjY3Ny01LjQ1MmMtMC42Mi0wLjc5Ny0xOS40MjktMjEuNzIzLTQ3LjYwNS0yNC4zOTgN%0D%0ACgljLTIxLjMyLTIuMDI1LTQyLjM3LDUuNjYzLTQyLjM3LDE3LjAyQzE2My4wNDcsMTU2LjA2LDE2%0D%0AOS4wOTIsMTYwLjEwOCwyMDYuODczLDE2OS4wOTN6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0K%0D%0APGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxn%0D%0APg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4N%0D%0ACjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" width="40px"></a> |
+            <a href="whatsapp://send?phone=919866272346"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0%0D%0Ab3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZl%0D%0AcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8v%0D%0ARFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQv%0D%0Ac3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDov%0D%0AL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5%0D%0AL3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ1NS43MzEgNDU1LjczMSIg%0D%0Ac3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDU1LjczMSA0NTUuNzMxOyIgeG1sOnNw%0D%0AYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cmVjdCB4PSIwIiB5PSIwIiBzdHlsZT0iZmlsbDojMUJE%0D%0ANzQxOyIgd2lkdGg9IjQ1NS43MzEiIGhlaWdodD0iNDU1LjczMSIvPg0KCTxnPg0KCQk8cGF0aCBz%0D%0AdHlsZT0iZmlsbDojRkZGRkZGOyIgZD0iTTY4LjQ5NCwzODcuNDFsMjIuMzIzLTc5LjI4NGMtMTQu%0D%0AMzU1LTI0LjM4Ny0yMS45MTMtNTIuMTM0LTIxLjkxMy04MC42MzgNCgkJCWMwLTg3Ljc2NSw3MS40%0D%0AMDItMTU5LjE2NywxNTkuMTY3LTE1OS4xNjdzMTU5LjE2Niw3MS40MDIsMTU5LjE2NiwxNTkuMTY3%0D%0AYzAsODcuNzY1LTcxLjQwMSwxNTkuMTY3LTE1OS4xNjYsMTU5LjE2Nw0KCQkJYy0yNy4zNDcsMC01%0D%0ANC4xMjUtNy03Ny44MTQtMjAuMjkyTDY4LjQ5NCwzODcuNDF6IE0xNTQuNDM3LDMzNy40MDZsNC44%0D%0ANzIsMi45NzVjMjAuNjU0LDEyLjYwOSw0NC40MzIsMTkuMjc0LDY4Ljc2MiwxOS4yNzQNCgkJCWM3%0D%0AMi44NzcsMCwxMzIuMTY2LTU5LjI5LDEzMi4xNjYtMTMyLjE2N1MzMDAuOTQ4LDk1LjMyMSwyMjgu%0D%0AMDcxLDk1LjMyMVM5NS45MDQsMTU0LjYxMSw5NS45MDQsMjI3LjQ4OA0KCQkJYzAsMjUuMzkzLDcu%0D%0AMjE3LDUwLjA1MiwyMC44NjksNzEuMzExbDMuMjgxLDUuMTA5bC0xMi44NTUsNDUuNjU4TDE1NC40%0D%0AMzcsMzM3LjQwNnoiLz4NCgkJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik0xODMuMzU5%0D%0ALDE1My40MDdsLTEwLjMyOC0wLjU2M2MtMy4yNDQtMC4xNzctNi40MjYsMC45MDctOC44NzgsMy4w%0D%0AMzcNCgkJCWMtNS4wMDcsNC4zNDgtMTMuMDEzLDEyLjc1NC0xNS40NzIsMjMuNzA4Yy0zLjY2Nywx%0D%0ANi4zMzMsMiwzNi4zMzMsMTYuNjY3LDU2LjMzM2MxNC42NjcsMjAsNDIsNTIsOTAuMzMzLDY1LjY2%0D%0ANw0KCQkJYzE1LjU3NSw0LjQwNCwyNy44MjcsMS40MzUsMzcuMjgtNC42MTJjNy40ODctNC43ODks%0D%0AMTIuNjQ4LTEyLjQ3NiwxNC41MDgtMjEuMTY2bDEuNjQ5LTcuNzAyYzAuNTI0LTIuNDQ4LTAuNzE5%0D%0ALTQuOTMyLTIuOTkzLTUuOTgNCgkJCWwtMzQuOTA1LTE2LjA4OWMtMi4yNjYtMS4wNDQtNC45NTMt%0D%0AMC4zODQtNi40NzcsMS41OTFsLTEzLjcwMywxNy43NjRjLTEuMDM1LDEuMzQyLTIuODA3LDEuODc0%0D%0ALTQuNDA3LDEuMzEyDQoJCQljLTkuMzg0LTMuMjk4LTQwLjgxOC0xNi40NjMtNTguMDY2LTQ5LjY4%0D%0AN2MtMC43NDgtMS40NDEtMC41NjItMy4xOSwwLjQ5OS00LjQxOWwxMy4wOTYtMTUuMTUNCgkJCWMx%0D%0ALjMzOC0xLjU0NywxLjY3Ni0zLjcyMiwwLjg3Mi01LjYwMmwtMTUuMDQ2LTM1LjIwMUMxODcuMTg3%0D%0ALDE1NC43NzQsMTg1LjM5MiwxNTMuNTE4LDE4My4zNTksMTUzLjQwN3oiLz4NCgk8L2c+DQo8L2c+%0D%0ADQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0K%0D%0APGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxn%0D%0APg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2%0D%0AZz4NCg==" width="40px"></a>
+            <button type="button" class="btn btn-primary float-right sharp-edges">Submit</button>
+            <button type="button" class="btn btn-secondary float-right sharp-edges">Draft</button>
+            
+            <!--<div class="skype-button circle" data-text="Skype Call" data-bot-id="ravi.devireddy07"></div>-->  
+            <!--<button class="skype-button rectangle" data-contact-id="ravi.devireddy07" data-text="Skype">Skype</button>-->
+            <!--<span class="skype-button rectangle" data-contact-id="ravi.devireddy07" data-text="Skype"></span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

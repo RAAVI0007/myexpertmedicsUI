@@ -1,0 +1,87 @@
+<h2> Book Appointment</h2>
+<div class="row">
+
+  <div style="width: 1.5%; float:left;">
+  </div>
+
+  <div style="width: 40%; float:left;">
+    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar woman">
+    <h2>Jane Flex</h2>
+    <p>Oncology Expert.</p>
+  </div>
+
+  <div style="width: 50%; float:right;">
+    <h3> Welcome to {{ title }}!</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+        />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+        />
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phnum" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phnum.errors }"
+        />
+        <div *ngIf="submitted && f.phnum.errors" class="invalid-feedback">
+          <div *ngIf="f.phnum.errors.required">Contact is required</div>
+        </div>
+      </div>
+
+      
+      <div class="form-group shadow-textarea">
+        <label>Diagnosis( if any) </label>
+        <textarea formControlName="diagnosis" class="form-control z-depth-1" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <div class="input-group">
+          <input class="form-control lhttt" type="date" formControlName="dob" placeholder="DOB">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Problem Description</label>
+        <input type="text" formControlName="problem" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.problem.errors }"
+        />
+        <div *ngIf="submitted && f.problem.errors" class="invalid-feedback">
+          <div *ngIf="f.problem.errors.required">Describe the Problem</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+<br>
+<!--<div style="width: 50%; float:right">
+  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar man">
+  <h2>John Doe</h2>
+  <p>Some text here too.</p>
+</div>-->

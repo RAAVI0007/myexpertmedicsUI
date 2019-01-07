@@ -1,0 +1,21 @@
+.text-change{
+	font-family: 'Gotham SSm A','Gotham SSm B',Helvetica,Arial,sans-serif !important;
+}
+
+.btw-line{
+	border-right: 1px solid ;
+}
+
+body {
+    font-size: 2rem;
+ }
+
+.sharp-edges{
+	    border-radius: 0;
+}
+
+textarea {
+	white-space: unset;
+  word-wrap: normal;
+  overflow-x: scroll;
+  }
