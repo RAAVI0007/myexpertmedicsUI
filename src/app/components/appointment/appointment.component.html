@@ -1,13 +1,14 @@
 <h2> Book Appointment</h2>
 <div class="row">
 
+
   <div style="width: 1.5%; float:left;">
   </div>
 
   <div style="width: 40%; float:left;">
-    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar woman">
-    <h2>Jane Flex</h2>
-    <p>Oncology Expert.</p>
+    <img class="img" src="https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/RamasamiNandakumar.jpg?raw=true" alt="Avatar woman">
+    <h2>Dr.Ramasami Nandakumar</h2>
+    <p>Cardiologist Expert.</p>
   </div>
 
   <div style="width: 50%; float:right;">
@@ -50,7 +51,7 @@
         </div>
       </div>
 
-      
+
       <div class="form-group shadow-textarea">
         <label>Diagnosis( if any) </label>
         <textarea formControlName="diagnosis" class="form-control z-depth-1" rows="3"></textarea>
@@ -68,18 +69,85 @@
         <input type="text" formControlName="problem" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.problem.errors }"
         />
         <div *ngIf="submitted && f.problem.errors" class="invalid-feedback">
-          <div *ngIf="f.problem.errors.required">Describe the Problem</div>
+          <div *ngIf="f.problem.errors.required">Describe your Problem</div>
         </div>
       </div>
 
+
+
       <div class="form-group">
-        <button class="btn btn-primary">Submit</button>
+        <label>Appointment Time:</label>
+        <input type="text" formControlName="bkgtime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bkgtime.errors }"
+        />
+        <div *ngIf="submitted && f.bkgtime.errors" class="invalid-feedback">
+          <div *ngIf="f.bkgtime.errors.required">please select appointment time</div>
+        </div>
       </div>
+
+
+      <!--<div class="form-group">
+          <label>Upload documents(if any)</label>
+          <input type="text" formControlName="uploaddoc" class="form-control" [ngClass]="{'is-invalid': submitted && f.uploaddoc.errors}"
+          />
+          <div *ngIf="submitted && f.uploaddoc.errors" class="invalid-feedback">
+            <div *ngIf="f.uploaddoc.errors.required">please upload documents</div>
+          </div>
+        </div>-->
+      <div>
+         
+            
+        <label>Upload Medical Reports</label>
+        </div>
+        <div>
+        <!--<div class="input-group mb-3">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile02">
+              <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+            </div>
+            <div class="input-group-append" (click)="uploadFile()">
+              <span class="input-group-text">Upload</span>
+            </div>
+          </div>-->
+
+        <label class="btn btn-dark">
+            <input type="file" text="Files"   (change)="selectFile($event)">
+          </label>
+          <button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadFile()">Upload</button>
+
+
+        <!--<p-fileUpload name="demo[]" url="./upload.php" (onUpload)="selectFile($event)" 
+        multiple="multiple" accept="image/*" maxFileSize="1000000">
+          <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+            </ul>
+          </ng-template>
+        </p-fileUpload>-->
+      </div>
+
+
+      <!--<div class="col-md-4">
+        <div class="date-picker-2" placeholder="Recipient's username" id="ttry" aria-describedby="basic-addon2"></div>
+        <span class="" id="example-popover-2"></span>
+      </div>
+      <div id="example-popover-2-content" class="hidden"> </div>
+      <div id="example-popover-2-title" class="hidden"> </div>-->
+      <br/>
+      <div class="form-group">
+        <button  style='margin-right:45px' class="btn btn-primary">Book Appointment</button>
+       
+
+         
+        </div>
+
+
 
     </form>
   </div>
 </div>
 <br>
+
+
 <!--<div style="width: 50%; float:right">
   <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar man">
   <h2>John Doe</h2>

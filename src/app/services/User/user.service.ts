@@ -16,12 +16,12 @@ export class UserService {
     }
 
     register(user: User) {
-        console.log(user.firstname) ;
-        console.log(user.lastname) ;
+        console.log(user.firstname);
+        console.log(user.lastname);
         console.log(user.email);
-        console.log(user.phone) ;
-        console.log(user.password) ;
-        console.log(user.username) ;
+        console.log(user.phone);
+        console.log(user.password);
+        console.log(user.username);
         return this.http.post('http://localhost:8080/api/auth/signup', user);
     }
 

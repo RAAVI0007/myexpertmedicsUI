@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Profile } from './profile.model';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-ourdoctors',
@@ -12,9 +13,9 @@ export class OurdoctorsComponent implements OnInit {
   IsPrivacyHidden = true;
   IsReprintHidden = true;
   IsMediaHidden = true;
-  images = ['https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/doc1.jpg?raw=true',
-    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/doc2.jpeg?raw=true',
-    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/doc3.jpg?raw=true'];
+  images = ['https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/RamasamiNandakumar.jpg?raw=true',
+    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/meghana.png?raw=true',
+    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/images/doc3.jpg?raw=true'];
 
   doctors = [
     {
@@ -36,10 +37,11 @@ export class OurdoctorsComponent implements OnInit {
 
   closeResult: string;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private ngbactiveModal: NgbActiveModal) { }
 
   open(content) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => { });
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => { })
+      .catch((res => { }));
   }
 
   ngOnInit() {

@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PatientdataComponent } from './components/patientdata/patientdata.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { MatButtonModule, MatCardModule, MatExpansionModule, MatIconModule, MatInputModule, MatToolbarModule } from '@angular/material';
 import { MatFaqModule } from '@angular-material-extensions/faq';
@@ -28,6 +28,14 @@ import { UserService } from './services/User/user.service';
 import { Interceptor } from './classes/inteceptor';
 import { TokenStorageService } from './classes/token.storage';
 import { MyappointmentsComponent } from './components/myappointments/myappointments.component';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { FileUploadModule } from 'primeng/fileupload';
+import { UploadFileService } from './services/UploadService/upload-file.service';
 
 @NgModule({
   declarations: [
@@ -46,16 +54,25 @@ import { MyappointmentsComponent } from './components/myappointments/myappointme
     MyappointmentsComponent
   ],
   imports: [
+    FileUploadModule,
+    ButtonModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModalModule,
+    CardModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule,
+    NgbModule.forRoot(),
     MatExpansionModule,
     AngularFontAwesomeModule,
     MatFaqModule.forRoot(),
+    FlatpickrModule.forRoot(),
     MatFaqModule,
     MatCardModule,
     MatToolbarModule,
@@ -64,8 +81,8 @@ import { MyappointmentsComponent } from './components/myappointments/myappointme
     MatIconModule,
     MatExpansionModule
   ],
-  providers: [TomcatService,
-    AuthenticationService, AlertService, UserService, TokenStorageService, {
+  providers: [NgbActiveModal, TomcatService, AuthenticationService, UploadFileService,
+    AlertService, UserService, TokenStorageService, {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
       multi: true

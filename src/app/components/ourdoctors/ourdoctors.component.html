@@ -1,119 +1,170 @@
 <h2>Our Doctors</h2>
-  <div class="row"> 
-    <div class="card" style="width:350px">
+ 
+<div class="row">
+<p-card header="Dr.Ramasami Nandakumar" subheader="Cardiologist" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+        <img  class="img" src="Card" [src]="images[0]" >
+    </p-header>
+    <div>
+        Dr Ramasami Nandakumar is one of the few cardiologists in Singapore who has worked as a Consultant Interventional Cardiologist
+        in a substantive position in the UK before coming to Singapore and is doubly accredited in Cardiology and Internal
+        Medicine by the Joint Committee for Higher Medical Training (JCHMT) of the Royal College of Physicians, UK.
+    </div>
+    <p-footer>
+        <button pButton type="button" label="Book Appointment" icon="pi pi-calendar"  style="margin-right: .25em"></button>
+        <button pButton type="button" label="Complete Profile" icon="pi pi-user" class="ui-button-secondary"></button>
+    </p-footer>
+</p-card>
+<div>&nbsp;</div><div>&nbsp;</div>
+<p-card header="Dr.Megha Dhamne" subheader="Neurologist" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+        <img class="img"  src="Card" [src]="images[1]" >
+    </p-header>
+    <div>
+        Dr Ramasami Nandakumar is one of the few cardiologists in Singapore who has worked as a Consultant Interventional Cardiologist
+        in a substantive position in the UK before coming to Singapore and is doubly accredited in Cardiology and Internal
+        Medicine by the Joint Committee for Higher Medical Training (JCHMT) of the Royal College of Physicians, UK.
+    </div>
+    <p-footer>
+        <button pButton type="button" label="Book Appointment" icon="pi pi-calendar" style="margin-right: .25em"></button>
+        <button pButton type="button" label="Complete Profile" icon="pi pi-user" class="ui-button-secondary"></button>
+    </p-footer>
+</p-card>
+
+
+</div>
+
+<!--<div class="row">
+  <div class="card" style="width:350px">
+    <img class="card-img-bottom" [src]="images[0]" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Dr.Ramasami Nandakumar</h4>
+      <p class="card-text">
+        Dr Ramasami Nandakumar is one of the few cardiologists in Singapore who has worked as a Consultant Interventional Cardiologist
+        in a substantive position in the UK before coming to Singapore and is doubly accredited in Cardiology and Internal
+        Medicine by the Joint Committee for Higher Medical Training (JCHMT) of the Royal College of Physicians, UK.
+      </p>
+      <button type="button" class="btn btn-primary" (click)="open(content3)">Check Complete Profile</button>
+
+      <ng-template #content3 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Dr.Ramasami Nandakumar's Profile</h4>
+        </div>
+        <div class="modal-body">
+         hello
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="ngbactiveModal.dismiss('Cross click')">Close</button>
+          
+          <button type="button" class="btn btn-outline-dark" (click)="ngbactiveModal.close('Close click')">Close</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div>&nbsp;</div>
+
+  <div class="card" style="width:350px">
       <img class="card-img-bottom" [src]="images[0]" alt="Card image" style="width:100%">
       <div class="card-body">
-        <h4 class="card-title">Doctor-1</h4>
-        <p class="card-text">With more than three decades of experience in radiation oncology, he is a pioneer who introduced many path breaking
-          procedures such as IMRT and IGRT to south India. </p>
-
+        <h4 class="card-title">Dr.Megha Dhamne</h4>
+        <p class="card-text">
+            Dr. Megha Dhamne is working as a Full Time Neurologist at Hiranandani Hospital since June 2018. 
+            She has done her MBBS and MD Medicine from BJ Medical College, Pune after which she went to the United States to pursue higher education in Neurology from Baylor College of Medicine, Houston, Texas, USA in 2008. During her 3 year Neurology residency at Baylor College of Medicine, she gained expertise in treating a wide variety of neurological disorders and acute neurological emergencies including stroke, epilepsy, neuromuscular disorders, movement disorders, headache, dementia and vertigo. She was also awarded the “Resident Teaching Award” by the department of Neurology at Baylor College of Medicine. She is American Board Certified in Neurology.
+        </p>
         <button type="button" class="btn btn-primary" (click)="open(content3)">Check Complete Profile</button>
-
+  
         <ng-template #content3 let-modal>
-          <div class=" modal-header ">
-            <h4 class="modal-title " id="modal-basic-title ">Doctor-1 Profile</h4>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Dr.Ramasami Nandakumar's Profile</h4>
           </div>
           <div class="modal-body">
-            <ul class="fa-ul">
-              <li>
-                <i class="fa-li fa fa-check-square"></i>He completed his MBBS with distinction from Khammam Medical College in 1975.</li>
-              <li>
-                <i class="fa-li fa fa-check-square"></i>MD from AIIMS in 1981.</li>
-            </ul>
+           hello
           </div>
           <div class="modal-footer">
-            <button type="button " class="btn btn-outline-dark" (click)="modal.close('Save click') ">Book Appointment</button>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <button type="button " class="btn btn-outline-dark" (click)="modal.close('Save click') ">Close</button>
-
-          </div>
-
-        </ng-template>
-      </div>
-    </div>
-    <div>&nbsp;</div>
-
-    <div class="card" style="width:350px">
-      <img class="card-img-bottom" [src]="images[1]" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <h4 class="card-title">Doctor-2</h4>
-        <p class="card-text">Dr. Mirza Athar Ali has more than seven years of experience with expertise in Electronic medical records and great
-          ability to deliver High Precision Radiotherapy treatment. </p>
-        <button type="button" class="btn btn-primary" (click)="open(content)">Check Complete Profile</button>
-
-        <ng-template #content let-modal>
-          <div class=" modal-header ">
-            <h4 class="modal-title " id="modal-basic-title ">Doctor-2 Profile</h4>
-          </div>
-          <div class="modal-body">
-            <ul class="fa-ul">
-              <li>
-                <i class="fa-li fa fa-check-square"></i>He completed his MBBS with distinction from Kurnool Medical College in 1975.</li>
-              <li>
-                <i class="fa-li fa fa-check-square"></i>MD from AIIMS in 1981.</li>
-              <li>
-                <i class="fa-li fa fa-spinner fa-spin"></i>He has also completed training programs at Royal Marsden Medical Hospital in London and Booth Memorial
-                Medical Center in New York.</li>
-              <li>
-                <i class="fa-li fa fa-square"></i>Thesis during post graduation (MD): “Estimation of LQ model parameter α/β and Biological Effective Dose
-                (BED) for acute normal tissue reactions in Head and Neck malignancies treated by Conventional and Hyper-fractionated
-                External Beam Radiotherapy”.</li>
-            </ul>
-          </div>
-          <div class="modal-footer ">
-            <button type="button " class="btn btn-outline-dark " (click)="modal.close('Save click') ">Close</button>
+            <button type="button" class="btn btn-outline-dark" (click)="ngbactiveModal.dismiss('Cross click')">Close</button>
+            
+            <button type="button" class="btn btn-outline-dark" (click)="ngbactiveModal.close('Close click')">Close</button>
           </div>
         </ng-template>
       </div>
     </div>
     <div>&nbsp;</div>
 
-    <div class="card " style="width:350px ">
-      <img class="card-img-bottom " [src]="images[2] " alt="Card image " style="width:100% ">
-      <div class="card-body ">
-        <h4 class="card-title ">Doctor-3</h4>
-        <p class="card-text">Dr. Prabhakar has more than 7years of experience in Radiation Oncology and is a trusted clinician in his field. </p>
-        <button type="button" class="btn btn-primary" (click)="open(content1)">Check Complete Profile</button>
 
-        <ng-template #content1 let-modal>
-          <div class=" modal-header ">
-            <h4 class="modal-title " id="modal-basic-title ">Doctor-3 Profile</h4>
-          </div>
-          <div class="modal-body ">
-            <ul class="fa-ul">
-              <li>
-                <i class="fa-li fa fa-check-square"></i>He completed his MBBS with distinction from Hyd Medical College in 1975.</li>
-              <li>
-                <i class="fa-li fa fa-check-square"></i>MD from AIIMS in 1981.</li>
-              <li>
-                <i class="fa-li fa fa-spinner fa-spin"></i>He has also completed training programs at Royal Marsden Medical Hospital in London and Booth Memorial
-                Medical Center in New York.</li>
-              <li>
-                <i class="fa-li fa fa-square"></i>Thesis during post graduation (MD): “Estimation of LQ model parameter α/β and Biological Effective Dose
-                (BED) for acute normal tissue reactions in Head and Neck malignancies treated by Conventional and Hyper-fractionated
-                External Beam Radiotherapy”.</li>
-            </ul>
-          </div>
-          <div class="modal-footer ">
-            <button type="button " class="btn btn-outline-dark " (click)="modal.close('Save click') ">Close</button>
-          </div>
-        </ng-template>
-        <div>
+  </div>-->
+  <!--<div class="card" style="width:350px">
+    <img class="card-img-bottom" [src]="images[1]" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <h4 class="card-title">Doctor-2</h4>
+      <p class="card-text">Dr. Mirza Athar Ali has more than seven years of experience with expertise in Electronic medical records and great
+        ability to deliver High Precision Radiotherapy treatment. </p>
+      <button type="button" class="btn btn-primary" (click)="open(content)">Check Complete Profile</button>
+
+      <ng-template #content let-modal>
+        <div class=" modal-header ">
+          <h4 class="modal-title " id="modal-basic-title ">Doctor-2 Profile</h4>
         </div>
-
-      </div>
+        <div class="modal-body">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa-li fa fa-check-square"></i>He completed his MBBS with distinction from Kurnool Medical College in 1975.</li>
+            <li>
+              <i class="fa-li fa fa-check-square"></i>MD from AIIMS in 1981.</li>
+            <li>
+              <i class="fa-li fa fa-spinner fa-spin"></i>He has also completed training programs at Royal Marsden Medical Hospital in London and Booth Memorial
+              Medical Center in New York.</li>
+            <li>
+              <i class="fa-li fa fa-square"></i>Thesis during post graduation (MD): “Estimation of LQ model parameter α/β and Biological Effective Dose
+              (BED) for acute normal tissue reactions in Head and Neck malignancies treated by Conventional and Hyper-fractionated
+              External Beam Radiotherapy”.</li>
+          </ul>
+        </div>
+        <div class="modal-footer ">
+          <button type="button " class="btn btn-outline-dark " (click)="modal.close('Save click') ">Close</button>
+        </div>
+      </ng-template>
     </div>
+  </div>
+  <div>&nbsp;</div>
+
+  <div class="card " style="width:350px ">
+    <img class="card-img-bottom " [src]="images[2] " alt="Card image " style="width:100% ">
+    <div class="card-body ">
+      <h4 class="card-title ">Doctor-3</h4>
+      <p class="card-text">Dr. Prabhakar has more than 7years of experience in Radiation Oncology and is a trusted clinician in his field. </p>
+      <button type="button" class="btn btn-primary" (click)="open(content1)">Check Complete Profile</button>
+
+      <ng-template #content1 let-modal>
+        <div class=" modal-header ">
+          <h4 class="modal-title " id="modal-basic-title ">Doctor-3 Profile</h4>
+        </div>
+        <div class="modal-body ">
+          <ul class="fa-ul">
+            <li>
+              <i class="fa-li fa fa-check-square"></i>He completed his MBBS with distinction from Hyd Medical College in 1975.</li>
+            <li>
+              <i class="fa-li fa fa-check-square"></i>MD from AIIMS in 1981.</li>
+            <li>
+              <i class="fa-li fa fa-spinner fa-spin"></i>He has also completed training programs at Royal Marsden Medical Hospital in London and Booth Memorial
+              Medical Center in New York.</li>
+            <li>
+              <i class="fa-li fa fa-square"></i>Thesis during post graduation (MD): “Estimation of LQ model parameter α/β and Biological Effective Dose
+              (BED) for acute normal tissue reactions in Head and Neck malignancies treated by Conventional and Hyper-fractionated
+              External Beam Radiotherapy”.</li>
+          </ul>
+        </div>
+        <div class="modal-footer ">
+          <button type="button " class="btn btn-outline-dark " (click)="modal.close('Save click') ">Close</button>
+        </div>
+      </ng-template>
+      <div>
+      </div>
+
+    </div>
+  </div>
 </div>
-    <br>
-    <!-- <div class="container">
+<br>-->
+  <!-- <div class="container">
       <h2>Our Doctors-NGFOR-First</h2>
       <div class="row">
         <li *ngFor="let presentation of doctors">
@@ -129,7 +180,7 @@
     </div> -->
 
 
-    <!-- <div class="container">
+  <!-- <div class="container">
       <h2>Our Doctors-NGFOR-second</h2>
       <div class="row">
         <div class="card" style="width:350px" *ngFor="let presentation of doctors">
@@ -143,7 +194,7 @@
     </div> -->
 
 
-    <!-- <div class="container">
+  <!-- <div class="container">
       <h2>Our Doctors-NGFOR2</h2>
       <div class="row">
         <div *ngFor="let doc of doctors">
@@ -176,4 +227,4 @@
             </div>
           </div>
           <div>&nbsp;</div>
-        </div> --> 
+        </div> -->

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormArray, NgForm } fr
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { PatientInfo } from './patientinfo';
 import { TomcatService } from '../../services/Tomcat/tomcat.service';
+import { UploadFileService } from '../../services/UploadService/upload-file.service';
+import { HttpResponse, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-appointment',
@@ -11,9 +13,20 @@ import { TomcatService } from '../../services/Tomcat/tomcat.service';
 })
 
 export class AppointmentComponent implements OnInit {
+  images = ['https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/RamasamiNandakumar.jpg?raw=true',
+    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/meghana.png?raw=true',
+    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/images/doc3.jpg?raw=true'];
+
+
   public rows: { reasons: string }[];
+  progress: { percentage: number } = { percentage: 0 };
+  currentFileUpload: File;
+  selectedFiles: FileList;
+  uploadedFiles: any[] = [];
+  file: any;
   isRowAdded = true;
-  constructor(private appointService: TomcatService,
+  constructor(private uploadService: UploadFileService,
+    private appointService: TomcatService,
     private formBuilder: FormBuilder,
     private http: HttpClient) {
     this.rows = [];
@@ -38,11 +51,38 @@ export class AppointmentComponent implements OnInit {
       phnum: ['', Validators.required],
       reasons: ['', Validators.required],
       problem: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]],
+      bkgtime: ['', Validators.required],
+      uploaddoc: ['', Validators.required]
     });
   }
+
+  onUpload(event) {
+    for (const file of event.files) {
+      console.log(file.name);
+      this.uploadedFiles.push(file);
+    }
+  }
+
+
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+  }
+
+  uploadFile() {
+    this.progress.percentage = 0;
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+      if (event.type === HttpEventType.UploadProgress) {
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+      } else if (event instanceof HttpResponse) {
+        console.log('File is completely uploaded!');
+      }
+    });
+    this.selectedFiles = undefined;
+  }
+
   onSubmit() {
-    alert('hello');
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
@@ -51,6 +91,7 @@ export class AppointmentComponent implements OnInit {
     Params = Params.append('firstParameter', this.registerForm.value.firstName);
     Params = Params.append('secondParameter', this.registerForm.value.lastName);
 
+    // tslint:disable-next-line:max-line-length
     /* return this.http.post('http://localhost:8080/RESTWebService/rest/lvcalc/rsfsjson', {params: { params: Params }}).subscribe(data => {
          this.posts = data;
          console.log(this.posts);

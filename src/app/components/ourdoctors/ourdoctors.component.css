@@ -18,3 +18,13 @@
     padding-left: 10px;
     font-weight: 100;
 }
+
+
+.img {
+    position: relative;
+    width:  400px;
+    height: 400px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}

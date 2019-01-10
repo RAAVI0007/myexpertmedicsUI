@@ -111,7 +111,7 @@ export class AppComponent implements OnInit {
         this.loginLabel = this.form.username;
         this.roles = this.tokenStorage.getAuthorities();
         this.isLoginShow = true;
-        //this.reloadPage();
+        /*this.reloadPage();*/
       },
       error => {
         console.log(error);
