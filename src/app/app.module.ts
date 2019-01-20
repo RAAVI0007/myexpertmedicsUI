@@ -36,6 +36,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
 import { UploadFileService } from './services/UploadService/upload-file.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { UploadFileService } from './services/UploadService/upload-file.service'
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    MyappointmentsComponent
+    MyappointmentsComponent,
+    HomeComponent
   ],
   imports: [
     FileUploadModule,

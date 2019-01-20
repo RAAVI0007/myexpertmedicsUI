@@ -14,8 +14,9 @@ export class OurdoctorsComponent implements OnInit {
   IsReprintHidden = true;
   IsMediaHidden = true;
   images = ['https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/RamasamiNandakumar.jpg?raw=true',
-    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/meghana.png?raw=true',
-    'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/images/doc3.jpg?raw=true'];
+            'http://www.brainclick.in/Online/User/medha28022016080736PM.png',
+            'https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/images/doc3.jpg?raw=true'
+  ];
 
   doctors = [
     {
@@ -45,6 +46,7 @@ export class OurdoctorsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

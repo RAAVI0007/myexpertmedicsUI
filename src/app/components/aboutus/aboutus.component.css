@@ -1,5 +1,13 @@
-p {
-   /* text-indent: 50px;
-    text-align: justify;*/
-  }
-  
+/*p {
+    text-indent: 50px;
+    text-align: justify;
+  }*/
+
+.home-bg-img {
+  background-image: url("https://firstopinionapp.com/wp-content/uploads/2014/05/first-opinion-doctor@2x1.jpg");
+  width: 100%;
+}
+
+.abtbackgroud {
+  background-color: lightblue
+}
