@@ -34,7 +34,7 @@ export class AppointmentComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
   model;
-  title = 'My Expert Medics';
+  title = 'MyExpert Medics';
   registerForm: FormGroup;
   submitted = false;
   dataSaved = false;

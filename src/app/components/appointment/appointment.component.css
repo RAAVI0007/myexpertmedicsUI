@@ -10,18 +10,38 @@ right-assign {}
 }
 
 header {
-    height: 80vh;
-    min-height: 400px;
-    background-size: cover; 
-    /*background-image: url('/src/images/homeImg.jpg');*/
-    /*
+  height: 80vh;
+  min-height: 400px;
+  background-size: cover;
+  /*background-image: url('/src/images/homeImg.jpg');*/
+  /*
     background-image: url("https://serving.photos.photobox.com/933719377091772aa6a0d63491226edfe3633f7f80d1af2cdf245fa1db6ef4e986b81681.jpg");
     */
-    background-image: url("https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/shutterstock_590603936.jpg?raw=true");
-  }
-  
+  background-image: url("https://github.com/RAAVI0007/myexpertmedicsUI/blob/master/src/images/shutterstock_590603936.jpg?raw=true");
+}
+
 header {
   min-height: 50px;
   background-size: cover;
   background-color: rgb(226, 218, 218);
+}
+
+.navbar {
+  background: transparent;
+}
+
+.headline h1 {
+  padding-top: 5in;
+  padding-left: 5in;
+  font-size: 20px;
+  color: white;
+}
+
+.appHeader {
+  border-style: solid;
+  border-color: #287EC7;
+}
+
+.formBKG {
+  background-color: whitesmoke;
 }
