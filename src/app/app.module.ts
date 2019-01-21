@@ -16,6 +16,7 @@ import { OurdoctorsComponent } from './components/ourdoctors/ourdoctors.componen
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { TomcatService } from './services/Tomcat/tomcat.service';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Http, HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
@@ -67,6 +68,7 @@ import { HomeComponent } from './components/home/home.component';
       useFactory: adapterFactory
     }),
     BrowserModule,
+    HttpModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -2,7 +2,10 @@
   background-image: url("https://firstopinionapp.com/wp-content/uploads/2014/05/first-opinion-doctor@2x1.jpg");
   width: 100%;
 }
- 
+
+img {
+  opacity: 0.5;
+}
  
 .caption-one {
   background-color: #cecece;
@@ -67,7 +70,7 @@ header {
 
 
 .navbar-fixed-top.scrolled {
-  background-color: gray !important;
+  background-color:white !important;
   transition: background-color 200ms linear;
 }
 

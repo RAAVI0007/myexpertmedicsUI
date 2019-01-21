@@ -152,7 +152,58 @@
 </div>
 <br>
 
+<div class="row">
+  <div style="width: 1.5%; float:left;"></div>
+  <div style="width: 30%; float:left;"></div>
+  <div class="formBKG" style="width: 40%; float:right;">
+    <br/>
+    <div class="col-md-12">
+      <form [formGroup]="paymentForm" (ngSubmit)="onPaymentFormSubmit()">
+        <div class="form-group">
+          <label>Card Number</label>
+          <input type="text" formControlName="cardnum" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cardnum.errors}"
+          />
+          <div *ngIf="submitted && f.cardnum.errors" class="invalid-feedback">
+            <div *ngIf="f.cardnum.errors.required">Card Number Required</div>
+          </div>
+        </div>
 
+        <div class="form-group">
+            <label>Exp Month</label>
+            <input type="text" formControlName="expmonth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expmonth.errors}"
+            />
+            <div *ngIf="submitted && f.expmonth.errors" class="invalid-feedback">
+              <div *ngIf="f.expmonth.errors.required">Exp Month Required</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label>Exp Year</label>
+              <input type="text" formControlName="expyear" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expyear.errors}"
+              />
+              <div *ngIf="submitted && f.expyear.errors" class="invalid-feedback">
+                <div *ngIf="f.expyear.errors.required">Exp Year Required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label>CVV</label>
+                <input type="text" formControlName="cvv" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cvv.errors}"
+                />
+                <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+                  <div *ngIf="f.cvv.errors.required">CVV Number Required</div>
+                </div>
+              </div>
+
+        <br/>
+        <div class="form-group">
+          <button style='margin-right:45px' class="btn btn-primary">Payment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div style="width: 30%; float: right;"></div>
+</div>
 <!--<div style="width: 50%; float:right">
   <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar man">
   <h2>John Doe</h2>

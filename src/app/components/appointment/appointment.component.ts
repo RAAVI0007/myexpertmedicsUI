@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray, NgForm } from '@angular/forms';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Http, Headers } from '@angular/http';
 import { PatientInfo } from './patientinfo';
 import { TomcatService } from '../../services/Tomcat/tomcat.service';
 import { UploadFileService } from '../../services/UploadService/upload-file.service';
@@ -28,7 +29,8 @@ export class AppointmentComponent implements OnInit {
   constructor(private uploadService: UploadFileService,
     private appointService: TomcatService,
     private formBuilder: FormBuilder,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private httpPay: Http) {
     this.rows = [];
   }
   // convenience getter for easy access to form fields
@@ -36,6 +38,7 @@ export class AppointmentComponent implements OnInit {
   model;
   title = 'MyExpert Medics';
   registerForm: FormGroup;
+  paymentForm: FormGroup;
   submitted = false;
   dataSaved = false;
   articleForm: FormGroup;
@@ -54,7 +57,16 @@ export class AppointmentComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       bkgtime: ['', Validators.required],
       uploaddoc: ['', Validators.required]
+
     });
+
+    this.paymentForm = this.formBuilder.group({
+      cardnum: ['', Validators.required],
+      expmonth: ['', Validators.required],
+      expyear: ['', Validators.required],
+      cvv: ['', Validators.required]
+    });
+
   }
 
   onUpload(event) {
@@ -136,7 +148,7 @@ export class AppointmentComponent implements OnInit {
     alert('Form Submiited..');
     this.dataSaved = false;
     const patientinfo = this.registerForm.value;
-    console.log('firstName===' + patientinfo.firstName);
+    console.log('firstName1===' + patientinfo.firstName);
     console.log('lastname=' + patientinfo.lastname);
     console.log('email=' + patientinfo.email);
     console.log('phnum=' + patientinfo.phnum);
@@ -154,5 +166,39 @@ export class AppointmentComponent implements OnInit {
       }
     );
     this.registerForm.reset();
+  }
+
+  onPaymentFormSubmit() {
+    if (this.paymentForm.invalid) {
+      return;
+    }
+    const cardinfo = this.paymentForm.value;
+    console.log('cardNum===' + cardinfo.cardnum);
+    console.log('Month===' + cardinfo.expmonth);
+    console.log('Year===' + cardinfo.expyear);
+    console.log('CVV===' + cardinfo.cvv);
+
+    const form = document.getElementsByTagName('form')[0];
+    (<any>window).Stripe.card.createToken({
+      number: cardinfo.cardnum,
+      exp_month: cardinfo.expmonth,
+      exp_year: cardinfo.expyear,
+      cvc: cardinfo.cvv
+    }, (status: number, response: any) => {
+      if (status === 200) {
+        const token = response.id;
+        this.chargeCard(token);
+      } else {
+        console.log(response.error.message);
+      }
+    });
+  }
+
+  chargeCard(token: string) {
+    const headers = new Headers({ 'token': token, 'amount': 100 });
+    this.httpPay.post('http://localhost:8080/payment/charge', {}, { headers: headers })
+      .subscribe(resp => {
+        console.log(resp);
+      });
   }
 }
