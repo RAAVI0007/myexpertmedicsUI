@@ -57,7 +57,6 @@ export class AppointmentComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       bkgtime: ['', Validators.required],
       uploaddoc: ['', Validators.required]
-
     });
 
     this.paymentForm = this.formBuilder.group({
@@ -169,9 +168,9 @@ export class AppointmentComponent implements OnInit {
   }
 
   onPaymentFormSubmit() {
-    if (this.paymentForm.invalid) {
+    /*if (this.      .invalid) {
       return;
-    }
+    }*/
     const cardinfo = this.paymentForm.value;
     console.log('cardNum===' + cardinfo.cardnum);
     console.log('Month===' + cardinfo.expmonth);

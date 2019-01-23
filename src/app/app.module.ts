@@ -38,7 +38,9 @@ import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
 import { UploadFileService } from './services/UploadService/upload-file.service';
 import { HomeComponent } from './components/home/home.component';
-
+import { TableModule } from 'primeng/table';
+import { DialogModule, Dialog } from 'primeng/dialog';
+import { CarComponent } from './components/car/car.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     RegisterComponent,
     MyappointmentsComponent,
-    HomeComponent
+    HomeComponent,
+    CarComponent
   ],
   imports: [
     FileUploadModule,
@@ -83,7 +86,9 @@ import { HomeComponent } from './components/home/home.component';
     MatButtonModule,
     MatInputModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    TableModule,
+    DialogModule
   ],
   providers: [NgbActiveModal, TomcatService, AuthenticationService, UploadFileService,
     AlertService, UserService, TokenStorageService, {

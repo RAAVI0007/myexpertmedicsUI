@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MyappointmentsComponent } from './components/myappointments/myappointments.component';
 import { HomeComponent } from './components/home/home.component';
+import { CarComponent } from './components/car/car.component' ;
 
 const routes: Routes = [
   { path: 'faqs', component: FaqsComponent },
