@@ -370,6 +370,10 @@ MIT
 MIT
 MIT
 
+@angular/forms@6.1.10
+MIT
+MIT
+
 primeng@7.0.4
 MIT
 The MIT License (MIT)
