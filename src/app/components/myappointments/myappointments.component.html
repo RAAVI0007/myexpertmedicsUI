@@ -10,7 +10,7 @@
     <br/>
     <a> Scheduled Appointments</a>
     <br/>
-    <a> Over Appointments</a>
+    <a> Completed Appointments</a>
     <br/>
 
   </div>
@@ -19,7 +19,7 @@
 
    <p-table [columns]="cols" [value]="patients" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
         <ng-template pTemplate="caption">
-            List of Cars
+            Appointments
         </ng-template>
         <ng-template pTemplate="header" let-columns>
             <tr>
@@ -39,7 +39,7 @@
        
     </p-table>
     
-    <p-dialog  [style]="{width: '900px', height: '600px'}" header="Patient Details" [(visible)]="displayDialog" [responsive]="true"
+    <p-dialog  [style]="{width: '900px', height: '600px'}" header="{{patient.patientname}} Details" [(visible)]="displayDialog" [responsive]="true"
      showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
         <div class="ui-g ui-fluid" *ngIf="patient">
                 
@@ -52,13 +52,13 @@
                       
                         <div class="row alert  border border-secondary">
                           <div class="col-md-4 btw-line">
-                            <span class="text-info font-weight-bold ">DOB : </span> {{ dob }}
+                            <span class="text-info font-weight-bold ">DOB : </span> {{ patient.dob }}
                           </div>
                           <div class="col-md-4 btw-line">
-                            <span class="text-info font-weight-bold ">City : </span> {{ city }}
+                            <span class="text-info font-weight-bold ">City : </span> {{ patient.city }}
                           </div>
                           <div class="col-md-4">
-                            <span class="text-info font-weight-bold "> Country : </span> {{ country }}
+                            <span class="text-info font-weight-bold "> Country : </span> {{ patient.country }}
                           </div>
                         </div>
                       
@@ -96,7 +96,7 @@
                       
                       
                             <ol type="1">
-                              <li *ngFor="let attach of attachments">
+                              <li *ngFor="let attach of patient.attachments">
                                 <a href="#"> {{attach}} </a>
                               </li>
                             </ol>

@@ -6,4 +6,5 @@ export interface Patient {
     contact?;
     wapnum?;
     skype?;
+    attachments?;
 }

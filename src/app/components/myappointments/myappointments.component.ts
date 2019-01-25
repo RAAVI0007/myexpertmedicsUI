@@ -20,54 +20,36 @@ export class MyappointmentsComponent implements OnInit {
 
     this.patients = [
       {
-        patientname: 'Patient1', dob: '2011', country: 'Singapore', city: 'Singapore', contact: '+91-9866272346',
-        wapnum: '+91-9866272346', skype: 'ravi.devireddy07'
+        patientname: 'Patient1', dob: '12-Jul-2011', country: 'Singapore', city: 'Singapore', contact: '+91-9866272346',
+        wapnum: '+91-9866272346', skype: 'ravi.devireddy07', attachments: ['X-Ray', 'Report']
       }, {
         patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient3', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient4', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient5', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient6', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient7', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient8', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
+        patientname: 'Patient9', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
       }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      }, {
-        patientname: 'Patient2', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
-        wapnum: '+91-9908002520', skype: 'test'
-      },
+        patientname: 'Patient10', dob: '2012', country: 'India', city: 'Hyderabad', contact: '+91-9908002520',
+        wapnum: '+91-9908002520', skype: 'test', attachments: ['X-Ray', 'Report']
+      }
     ];
 
     this.cols = [
@@ -84,51 +66,51 @@ export class MyappointmentsComponent implements OnInit {
     this.newCar = true;
     this.patient = {};
     this.displayDialog = true;
-}
+  }
 
-save() {
+  save() {
     // tslint:disable-next-line:prefer-const
     let cars = [...this.patients];
     // tslint:disable-next-line:curly
     if (this.newCar)
-        cars.push(this.patient);
+      cars.push(this.patient);
     // tslint:disable-next-line:curly
     else
-        cars[this.findSelectedCarIndex()] = this.patient;
+      cars[this.findSelectedCarIndex()] = this.patient;
 
     this.patients = cars;
     this.patient = null;
     this.displayDialog = false;
-}
+  }
 
 
-delete() {
+  delete() {
     const index = this.patients.indexOf(this.selectedCar);
     this.patients = this.patients.filter((val, i) => i !== index);
     this.patients = null;
     this.displayDialog = false;
-}
+  }
 
-onRowSelect(event) {
+  onRowSelect(event) {
     this.newCar = false;
     this.patient = this.cloneCar(event.data);
     this.displayDialog = true;
-}
+  }
 
-cloneCar(c: Patient): Patient {
+  cloneCar(c: Patient): Patient {
     const car = new PrimePatient();
     // tslint:disable-next-line:forin
     for (const prop in c) {
-        car[prop] = c[prop];
+      car[prop] = c[prop];
     }
     return car;
-}
+  }
 
-findSelectedCarIndex(): number {
+  findSelectedCarIndex(): number {
     return this.patients.indexOf(this.selectedCar);
-}
+  }
 }
 
 class PrimePatient implements Patient {
-constructor(public patientname?, public dob?, public contact?, public country?) { }
+  constructor(public patientname?, public dob?, public contact?, public country?, public attachments?) { }
 }
