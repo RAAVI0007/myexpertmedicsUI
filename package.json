@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "express": "^4.16.2",
     "@angular-material-extensions/faq": "^3.0.2",
     "@angular/animations": "^6.1.10",
     "@angular/cdk": "^7.0.1",
