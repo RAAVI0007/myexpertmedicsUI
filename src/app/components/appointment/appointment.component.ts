@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormArray, NgForm } fr
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Http, Headers } from '@angular/http';
 import { PatientInfo } from './patientinfo';
-import { TomcatService } from '../../services/Tomcat/tomcat.service';
+import { AppointmentService } from '../../services/AppointmentService/appointment.service';
 import { UploadFileService } from '../../services/UploadService/upload-file.service';
 import { HttpResponse, HttpEventType } from '@angular/common/http';
 
@@ -27,7 +27,7 @@ export class AppointmentComponent implements OnInit {
   file: any;
   isRowAdded = true;
   constructor(private uploadService: UploadFileService,
-    private appointService: TomcatService,
+    private appointService: AppointmentService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private httpPay: Http) {
@@ -47,15 +47,15 @@ export class AppointmentComponent implements OnInit {
   posts: any;
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
+      firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       dob: ['', Validators.required],
       diagnosis: ['', Validators.required],
-      phnum: ['', Validators.required],
+      phonenum: ['', Validators.required],
       reasons: ['', Validators.required],
-      problem: ['', Validators.required],
+      problemdesc: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      bkgtime: ['', Validators.required],
+      appointmenttime: ['', Validators.required],
       uploaddoc: ['', Validators.required]
     });
 
@@ -99,7 +99,7 @@ export class AppointmentComponent implements OnInit {
       return;
     }
     let Params = new HttpParams();
-    Params = Params.append('firstParameter', this.registerForm.value.firstName);
+    Params = Params.append('firstParameter', this.registerForm.value.firstname);
     Params = Params.append('secondParameter', this.registerForm.value.lastName);
 
     // tslint:disable-next-line:max-line-length
@@ -139,21 +139,22 @@ export class AppointmentComponent implements OnInit {
   }
 
   onFormSubmit() {
-    alert('Form Submiited..' + this.registerForm.invalid);
+    /*alert('Form Submiited..' + this.registerForm.invalid);*/
     this.submitted = true;
-    if (this.registerForm.invalid) {
+    /*if (this.registerForm.invalid) {
       return;
-    }
-    alert('Form Submiited..');
+    }*/
+    /*alert('Form Submiited..');*/
     this.dataSaved = false;
     const patientinfo = this.registerForm.value;
-    console.log('firstName1===' + patientinfo.firstName);
+    console.log('firstName1===' + patientinfo.firstname);
     console.log('lastname=' + patientinfo.lastname);
     console.log('email=' + patientinfo.email);
-    console.log('phnum=' + patientinfo.phnum);
-    console.log('reason=' + patientinfo.reasons);
+    console.log('phonenum=' + patientinfo.phonenum);
+    console.log('reasons=' + patientinfo.reasons);
     console.log('DOB=' + patientinfo.dob);
     console.log('Diagnosis=' + patientinfo.diagnosis);
+    console.log('appointmenttime=' + patientinfo.appointmenttime);
 
     this.appointService.saveAppointment(patientinfo).subscribe(
       article => {

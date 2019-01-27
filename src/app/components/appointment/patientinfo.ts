@@ -1,10 +1,11 @@
 export interface PatientInfo {
     id: string;
-    firstName: string;
+    firstname: string;
     lastname: string;
     email: string;
-    phnum: string;
-    reasons: string;
+    phonenum: string;
+    problemdesc: string;
     dob: string;
     diagnosis: string;
+    appointmenttime: string;
 }

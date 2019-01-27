@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { User } from '../../classes/user';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class UserService {
+
+    baseUrl = environment.baseURL;
+    apiPostSignUp = this.baseUrl + 'api/auth/signup';
     constructor(private http: HttpClient) { }
 
     getAll() {
@@ -22,7 +25,7 @@ export class UserService {
         console.log(user.phone);
         console.log(user.password);
         console.log(user.username);
-        return this.http.post('http://localhost:8080/api/auth/signup', user);
+        return this.http.post(this.apiPostSignUp, user);
     }
 
     update(user: User) {

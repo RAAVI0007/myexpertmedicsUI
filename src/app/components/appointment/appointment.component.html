@@ -33,10 +33,10 @@
       <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors}"
+          <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors}"
           />
-          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+          <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">First Name is required</div>
           </div>
         </div>
 
@@ -61,10 +61,10 @@
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="text" formControlName="phnum" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phnum.errors }"
+          <input type="text" formControlName="phonenum" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phonenum.errors }"
           />
-          <div *ngIf="submitted && f.phnum.errors" class="invalid-feedback">
-            <div *ngIf="f.phnum.errors.required">Contact is required</div>
+          <div *ngIf="submitted && f.phonenum.errors" class="invalid-feedback">
+            <div *ngIf="f.phonenum.errors.required">Contact is required</div>
           </div>
         </div>
 
@@ -83,19 +83,19 @@
 
         <div class="form-group">
           <label>Problem Description</label>
-          <input type="text" formControlName="problem" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.problem.errors }"
+          <input type="text" formControlName="problemdesc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.problemdesc.errors }"
           />
-          <div *ngIf="submitted && f.problem.errors" class="invalid-feedback">
-            <div *ngIf="f.problem.errors.required">Describe your Problem</div>
+          <div *ngIf="submitted && f.problemdesc.errors" class="invalid-feedback">
+            <div *ngIf="f.problemdesc.errors.required">Describe your Problem</div>
           </div>
         </div>
 
         <div class="form-group">
           <label>Appointment Time:</label>
-          <input type="text" formControlName="bkgtime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bkgtime.errors }"
+          <input type="text" formControlName="appointmenttime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.appointmenttime.errors }"
           />
-          <div *ngIf="submitted && f.bkgtime.errors" class="invalid-feedback">
-            <div *ngIf="f.bkgtime.errors.required">please select appointment time</div>
+          <div *ngIf="submitted && f.appointmenttime.errors" class="invalid-feedback">
+            <div *ngIf="f.appointmenttime.errors.required">please select appointment time</div>
           </div>
         </div>
         <!--<div class="form-group">
@@ -152,7 +152,7 @@
 </div>
 <br>
 
-<div class="row">
+<!--<div class="row">
   <div style="width: 1.5%; float:left;"></div>
   <div style="width: 30%; float:left;"></div>
   <div class="formBKG" style="width: 40%; float:right;">
@@ -202,7 +202,7 @@
     </div>
   </div>
   <div style="width: 30%; float: right;"></div>
-</div>
+</div>-->
 <!--<div style="width: 50%; float:right">
   <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar man">
   <h2>John Doe</h2>

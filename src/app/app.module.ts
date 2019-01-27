@@ -14,7 +14,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { OurdoctorsComponent } from './components/ourdoctors/ourdoctors.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { TomcatService } from './services/Tomcat/tomcat.service';
+import { AppointmentService } from './services/AppointmentService/appointment.service';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -90,7 +90,7 @@ import { CarComponent } from './components/car/car.component';
     TableModule,
     DialogModule
   ],
-  providers: [NgbActiveModal, TomcatService, AuthenticationService, UploadFileService,
+  providers: [NgbActiveModal, AppointmentService, AuthenticationService, UploadFileService,
     AlertService, UserService, TokenStorageService, {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,

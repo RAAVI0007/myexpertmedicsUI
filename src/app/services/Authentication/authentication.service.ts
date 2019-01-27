@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
-import {AuthLoginInfo } from '../../components/login/login-info';
+import { AuthLoginInfo } from '../../components/login/login-info';
 import { JwtResponse } from '../../services/LoginService/jwt-response';
-
+import { environment } from '../../../environments/environment';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+};
 
 @Injectable()
 export class AuthenticationService {
+
+    baseUrl = environment.baseURL;
+    apiPostSignIn = this.baseUrl + 'api/auth/signin';
     constructor(private http: HttpClient) { }
 
     /*login(username: string, password: string) {
@@ -33,9 +36,9 @@ export class AuthenticationService {
         console.log('attempAuth ::' + credentials.username);
         return this.http.post<any>('http://localhost:8080/api/auth/signin', credentials, httpOptions);
       }*/
-      attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
-        return this.http.post<JwtResponse>('http://localhost:8080/api/auth/signin', credentials, httpOptions);
-      }
+    attemptAuth(credentials: AuthLoginInfo): Observable<JwtResponse> {
+        return this.http.post<JwtResponse>(this.apiPostSignIn, credentials, httpOptions);
+    }
 
     logout() {
         // remove user from local storage to log user out
