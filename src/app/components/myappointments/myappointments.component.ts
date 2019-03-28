@@ -93,11 +93,11 @@ export class MyappointmentsComponent implements OnInit {
 
   onRowSelect(event) {
     this.newCar = false;
-    this.patient = this.cloneCar(event.data);
+    this.patient = this.clonePatient(event.data);
     this.displayDialog = true;
   }
 
-  cloneCar(c: Patient): Patient {
+  clonePatient(c: Patient): Patient {
     const car = new PrimePatient();
     // tslint:disable-next-line:forin
     for (const prop in c) {

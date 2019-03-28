@@ -12,7 +12,6 @@ export class AppointmentService {
   apiPostURL = this.baseUrl + 'appointmentreq/bookapp';
   gitdata: any;
 
-
   constructor(private _httpclient: HttpClient) { }
 
 
